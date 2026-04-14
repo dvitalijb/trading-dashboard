@@ -1,24 +1,19 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
 import { signOut } from 'firebase/auth';
 import { LogOut } from 'lucide-react';
 import { auth } from '@/src/lib/firebase';
 
 export default function LogoutButton() {
-  const router = useRouter();
-
   const handleLogout = async () => {
-  try {
-    await signOut(auth);
-    // Видаляємо куку
-    document.cookie = "session=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
-    // ПОВНЕ ПЕРЕЗАВАНТАЖЕННЯ
-    window.location.href = '/login';
-  } catch (error) {
-    console.error('Logout error:', error);
-  }
-};
+    try {
+      await signOut(auth);
+      document.cookie = "session=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+      window.location.href = '/login';
+    } catch (error) {
+      console.error('Logout error:', error);
+    }
+  };
 
   return (
     <button
