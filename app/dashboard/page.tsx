@@ -442,7 +442,7 @@ export default function DashboardPage() {
   };
 
   const handleRowClick = (trade: Trade) => {
-    localStorage.setItem(trade.position_id.toString(), JSON.stringify(trade));
+    localStorage.setItem('selectedTrade', JSON.stringify(trade));
     window.open(`/trade/${trade.position_id}`, '_blank');
   };
 
