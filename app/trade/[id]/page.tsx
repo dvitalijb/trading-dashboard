@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { createChart } from 'lightweight-charts';
-import { Maximize2, Minimize2, ArrowLeft, DollarSign, Shield, CheckCircle, Clock, BarChart2 } from 'lucide-react';
+import { Maximize2, Minimize2, ArrowLeft, DollarSign, CheckCircle, Clock, BarChart2 } from 'lucide-react';
 
 interface Trade {
   position_id: number;
@@ -274,7 +274,7 @@ export default function TradeDetailPage() {
 
       {!isFullscreen && (
         <div className="bg-slate-900/50 border-t border-slate-800 p-6">
-          <div className="grid grid-cols-5 gap-8">
+          <div className="grid grid-cols-4 gap-8">
             <div className="space-y-3">
               <div className="flex items-center gap-2 text-slate-400 mb-3">
                 <DollarSign className="h-4 w-4" />
@@ -294,31 +294,6 @@ export default function TradeDetailPage() {
                 <div>
                   <span className="text-xs text-slate-500">Close Price</span>
                   <p className="text-lg font-mono text-slate-200">{trade.exit_price}</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-3">
-              <div className="flex items-center gap-2 text-slate-400 mb-3">
-                <Shield className="h-4 w-4" />
-                <span className="text-sm font-semibold uppercase tracking-wider">Trade Protection</span>
-              </div>
-              <div className="space-y-2">
-                <div>
-                  <span className="text-xs text-slate-500">SL</span>
-                  <p className="text-lg font-mono text-slate-400">-</p>
-                </div>
-                <div>
-                  <span className="text-xs text-slate-500">SL Pips</span>
-                  <p className="text-lg font-mono text-slate-400">-</p>
-                </div>
-                <div>
-                  <span className="text-xs text-slate-500">TP</span>
-                  <p className="text-lg font-mono text-slate-400">-</p>
-                </div>
-                <div>
-                  <span className="text-xs text-slate-500">TP Pips</span>
-                  <p className="text-lg font-mono text-slate-400">-</p>
                 </div>
               </div>
             </div>
